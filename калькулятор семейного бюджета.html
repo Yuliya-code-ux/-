@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Семейный бюджет: приветственный лендинг и удобный онлайн-калькулятор доходов и расходов."
+  />
+  <title>Семейный бюджет | Лендинг и калькулятор</title>
+  <link rel="stylesheet" href="./assets/styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <nav class="top-nav">
+        <a class="brand" href="#home">Семейный бюджет</a>
+        <div class="top-nav-right">
+          <div class="top-nav-links">
+            <a href="#features">Преимущества</a>
+            <a href="#calculator">Калькулятор</a>
+            <a href="#history">История</a>
+          </div>
+          <button class="btn btn-secondary btn-theme" id="themeToggle" type="button">
+            Тема: светлая
+          </button>
+        </div>
+      </nav>
+      <div id="home" class="hero-content">
+        <p class="hero-badge">Личный финансовый помощник</p>
+        <h1>Контролируйте бюджет семьи без таблиц и сложных сервисов</h1>
+        <p class="hero-subtitle">
+          Заполняйте доходы и расходы за минуту, получайте анализ состояния бюджета
+          и рекомендации по финансовому запасу.
+        </p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" id="scrollToCalculator">Начать расчет</button>
+          <button class="btn btn-secondary" id="fillDemoData">Заполнить пример</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="features" class="section features">
+      <h2>Что уже умеет сайт</h2>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <h3>Быстрый расчет</h3>
+          <p>Считает общие доходы, расходы, остаток и процент расходов от дохода.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Оценка риска</h3>
+          <p>Показывает состояние бюджета и предупреждает о возможном дефиците.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Финансовый резерв</h3>
+          <p>Подсказывает рекомендуемую сумму резерва на основе дохода семьи.</p>
+        </article>
+        <article class="feature-card">
+          <h3>История расчетов</h3>
+          <p>Сохраняет несколько последних расчетов в браузере для сравнения.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="calculator" class="section calculator-wrap">
+      <div class="container">
+        <div class="header">
+          <h2>Калькулятор семейного бюджета</h2>
+          <p>Заполните поля, чтобы увидеть финансовую картину за месяц.</p>
+        </div>
+
+        <div class="content">
+          <div class="grid">
+            <div class="card">
+              <h3>Доходы семьи</h3>
+
+              <div class="field">
+                <label for="salary1">Зарплата 1-го члена семьи</label>
+                <input type="number" id="salary1" placeholder="Например: 60000" min="0" />
+              </div>
+
+              <div class="field">
+                <label for="salary2">Зарплата 2-го члена семьи</label>
+                <input type="number" id="salary2" placeholder="Например: 50000" min="0" />
+              </div>
+
+              <div class="field">
+                <label for="extraIncome">Дополнительный доход</label>
+                <input type="number" id="extraIncome" placeholder="Например: 15000" min="0" />
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>Обязательные расходы</h3>
+
+              <div class="field">
+                <label for="housing">Жилье / ипотека / аренда</label>
+                <input type="number" id="housing" placeholder="Например: 30000" min="0" />
+              </div>
+
+              <div class="field">
+                <label for="utilities">Коммунальные услуги</label>
+                <input type="number" id="utilities" placeholder="Например: 7000" min="0" />
+              </div>
+
+              <div class="field">
+                <label for="transport">Транспорт</label>
+                <input type="number" id="transport" placeholder="Например: 8000" min="0" />
+              </div>
+
+              <div class="field">
+                <label for="loans">Кредиты</label>
+                <input type="number" id="loans" placeholder="Например: 10000" min="0" />
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>Переменные расходы</h3>
+
+              <div class="field">
+                <label for="food">Продукты</label>
+                <input type="number" id="food" placeholder="Например: 25000" min="0" />
+              </div>
+
+              <div class="field">
+                <label for="children">Дети / школа / кружки</label>
+                <input type="number" id="children" placeholder="Например: 12000" min="0" />
+              </div>
+
+              <div class="field">
+                <label for="health">Здоровье / лекарства</label>
+                <input type="number" id="health" placeholder="Например: 5000" min="0" />
+              </div>
+
+              <div class="field">
+                <label for="entertainment">Развлечения / отдых</label>
+                <input type="number" id="entertainment" placeholder="Например: 6000" min="0" />
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>Прочие расходы</h3>
+
+              <div class="field">
+                <label for="shopping">Одежда / покупки</label>
+                <input type="number" id="shopping" placeholder="Например: 7000" min="0" />
+              </div>
+
+              <div class="field">
+                <label for="pets">Животные</label>
+                <input type="number" id="pets" placeholder="Например: 2000" min="0" />
+              </div>
+
+              <div class="field">
+                <label for="other">Прочее</label>
+                <input type="number" id="other" placeholder="Например: 4000" min="0" />
+              </div>
+
+              <div class="buttons">
+                <button class="btn btn-primary" id="calculateBtn">Рассчитать бюджет</button>
+                <button class="btn btn-secondary" id="resetBtn">Очистить</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="result-box">
+            <h3>Результаты расчета</h3>
+
+            <div class="result-item">
+              <div class="result-label">Общий доход:</div>
+              <div class="result-value" id="totalIncome">0 ₽</div>
+            </div>
+
+            <div class="result-item">
+              <div class="result-label">Общие расходы:</div>
+              <div class="result-value" id="totalExpenses">0 ₽</div>
+            </div>
+
+            <div class="result-item">
+              <div class="result-label">Остаток бюджета:</div>
+              <div class="result-value" id="balance">0 ₽</div>
+            </div>
+
+            <div class="result-item">
+              <div class="result-label">Расходы от дохода:</div>
+              <div class="result-value" id="expensePercent">0 %</div>
+            </div>
+
+            <div class="result-item">
+              <div class="result-label">Рекомендуемый резерв (20%):</div>
+              <div class="result-value" id="reserveTarget">0 ₽</div>
+            </div>
+
+            <div class="status good" id="statusMessage">
+              Заполните поля и нажмите «Рассчитать бюджет».
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="history" class="section history-section">
+      <div class="history-box">
+        <h2>Последние расчеты</h2>
+        <p class="history-note">Сохраняются локально в вашем браузере.</p>
+        <ul id="historyList" class="history-list"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Сделано для удобного и понятного семейного финансового планирования.</p>
+  </footer>
+
+  <script src="./assets/app.js"></script>
+</body>
+</html>
