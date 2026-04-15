@@ -4,12 +4,113 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Семейный бюджет</title>
-  <meta http-equiv="refresh" content="0; url=./калькулятор%20семейного%20бюджета.html" />
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --text: #1f2937;
+      --card-bg: #ffffff;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --border: #e5e7eb;
+    }
+
+    [data-theme="dark"] {
+      --bg: #111827;
+      --text: #f9fafb;
+      --card-bg: #1f2937;
+      --accent: #60a5fa;
+      --accent-hover: #93c5fd;
+      --border: #374151;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .theme-toggle {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 14px;
+      background: var(--card-bg);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .card {
+      width: min(560px, 100%);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--card-bg);
+      padding: 24px;
+      text-align: center;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover {
+      color: var(--accent-hover);
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-  <p>
-    Переход на главную страницу...
-    <a href="./калькулятор семейного бюджета.html">Открыть вручную</a>
-  </p>
+  <button class="theme-toggle" id="themeToggle" type="button">Темная тема</button>
+
+  <main class="card">
+    <h1>Семейный бюджет</h1>
+    <p>
+      Выберите удобную тему и откройте калькулятор:
+      <a href="./калькулятор семейного бюджета.html">перейти к расчетам</a>
+    </p>
+  </main>
+
+  <script>
+    const STORAGE_KEY = "budget-theme";
+    const root = document.documentElement;
+    const themeToggleButton = document.getElementById("themeToggle");
+
+    function applyTheme(theme) {
+      if (theme === "dark") {
+        root.setAttribute("data-theme", "dark");
+        themeToggleButton.textContent = "Светлая тема";
+      } else {
+        root.removeAttribute("data-theme");
+        themeToggleButton.textContent = "Темная тема";
+      }
+    }
+
+    const savedTheme = localStorage.getItem(STORAGE_KEY);
+    const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const initialTheme = savedTheme || (systemPrefersDark ? "dark" : "light");
+
+    applyTheme(initialTheme);
+
+    themeToggleButton.addEventListener("click", () => {
+      const currentTheme = root.getAttribute("data-theme") === "dark" ? "dark" : "light";
+      const nextTheme = currentTheme === "dark" ? "light" : "dark";
+      localStorage.setItem(STORAGE_KEY, nextTheme);
+      applyTheme(nextTheme);
+    });
+  </script>
 </body>
 </html>
