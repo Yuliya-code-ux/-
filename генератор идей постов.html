@@ -7,22 +7,119 @@
   <style>
     body {
       margin: 0;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
       font-family: Arial, sans-serif;
       background: #f5f7fb;
       color: #1f2937;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .card {
+      width: min(640px, 100%);
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(31, 41, 55, 0.12);
+      padding: 28px;
     }
 
     h1 {
-      margin: 0;
-      font-size: clamp(2rem, 6vw, 3rem);
+      margin: 0 0 18px;
+      font-size: clamp(1.8rem, 5vw, 2.4rem);
       text-align: center;
+    }
+
+    .controls {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    label {
+      font-weight: 600;
+    }
+
+    select, button {
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #d1d5db;
+      font-size: 1rem;
+    }
+
+    button {
+      background: #2563eb;
+      color: #ffffff;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    .idea-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 10px;
+      padding: 14px;
+      min-height: 56px;
+      line-height: 1.4;
     }
   </style>
 </head>
 <body>
-  <h1>Генератор идей постов</h1>
+  <main class="card">
+    <h1>Генератор идей постов</h1>
+
+    <div class="controls">
+      <label for="category">Категория:</label>
+      <select id="category">
+        <option value="business">Бизнес</option>
+        <option value="lifestyle">Лайфстайл</option>
+        <option value="education">Обучение</option>
+      </select>
+      <button id="generate-btn" type="button">Сгенерировать идею</button>
+    </div>
+
+    <div class="idea-box" id="idea-box">Нажмите кнопку, чтобы получить идею.</div>
+  </main>
+
+  <script>
+    const ideasByCategory = {
+      business: [
+        "5 ошибок, которые тормозят рост продаж и как их исправить",
+        "Кейс: как маленькая команда удвоила прибыль за 3 месяца",
+        "Чек-лист запуска нового продукта без лишних затрат"
+      ],
+      lifestyle: [
+        "Мое идеальное утро: привычки, которые реально помогают",
+        "7 идей для выходных без больших расходов",
+        "Неделя без соцсетей: что изменилось в самочувствии"
+      ],
+      education: [
+        "Как учиться по 20 минут в день и не бросать",
+        "Топ-10 бесплатных ресурсов для изучения новой профессии",
+        "Пошаговый план освоения сложной темы за 14 дней"
+      ]
+    };
+
+    const categorySelect = document.getElementById("category");
+    const generateBtn = document.getElementById("generate-btn");
+    const ideaBox = document.getElementById("idea-box");
+
+    function getRandomIdea(category) {
+      const ideas = ideasByCategory[category];
+      const randomIndex = Math.floor(Math.random() * ideas.length);
+      return ideas[randomIndex];
+    }
+
+    generateBtn.addEventListener("click", () => {
+      const category = categorySelect.value;
+      ideaBox.textContent = getRandomIdea(category);
+    });
+  </script>
 </body>
 </html>
