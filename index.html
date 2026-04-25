@@ -1,115 +1,371 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Семейный бюджет</title>
-  <style>
-    :root {
-      --bg: #f5f7fb;
-      --text: #1f2937;
-      --card-bg: #ffffff;
-      --accent: #2563eb;
-      --accent-hover: #1d4ed8;
-      --border: #e5e7eb;
-    }
-
-    [data-theme="dark"] {
-      --bg: #111827;
-      --text: #f9fafb;
-      --card-bg: #1f2937;
-      --accent: #60a5fa;
-      --accent-hover: #93c5fd;
-      --border: #374151;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 24px;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      transition: background-color 0.2s ease, color 0.2s ease;
-    }
-
-    .theme-toggle {
-      position: fixed;
-      top: 16px;
-      right: 16px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 8px 14px;
-      background: var(--card-bg);
-      color: var(--text);
-      cursor: pointer;
-      font-size: 14px;
-    }
-
-    .card {
-      width: min(560px, 100%);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      background: var(--card-bg);
-      padding: 24px;
-      text-align: center;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    a:hover {
-      color: var(--accent-hover);
-      text-decoration: underline;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Лендинг Юлии Хасинаевой: системная интеграция личности, диагностика точки сбоя и выбор формата сопровождения."
+  >
+  <title>Юлия Хасинаева — системная интеграция личности</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <button class="theme-toggle" id="themeToggle" type="button">Темная тема</button>
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="#top">Yuliya Khasinaeva</a>
+      <nav class="nav">
+        <a href="#system">Система</a>
+        <a href="#diagnostics">Диагностика</a>
+        <a href="#entry-levels">Форматы</a>
+        <a href="#about">О Юлии</a>
+      </nav>
+      <a class="btn btn--outline btn--small" href="#diagnostics">Запись</a>
+    </div>
+  </header>
 
-  <main class="card">
-    <h1>Семейный бюджет</h1>
-    <p>
-      Выберите удобную тему и откройте калькулятор:
-      <a href="./калькулятор семейного бюджета.html">перейти к расчетам</a>
-    </p>
+  <main id="top">
+    <section class="hero reveal">
+      <div class="container hero__content">
+        <p class="eyebrow">Системная интеграция личности</p>
+        <h1>У тебя не хаос.<br>У тебя нет системы.</h1>
+        <p class="lead">
+          Я помогаю собрать личность, решения, деньги и дело в единую структуру,
+          которая выдерживает рост.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--accent" href="#diagnostics">Пройти диагностику</a>
+          <a class="btn btn--outline" href="#system">Познакомиться с системой</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="container narrow">
+        <h2>Ты можешь быть сильной, умной, опытной. Но все равно жить в постоянном напряжении.</h2>
+        <p>Ты много делаешь, но не всегда растешь. Решения даются тяжело. Система не выдерживает масштаб.</p>
+        <p class="accent-line">Проблема не в тебе. Проблема в отсутствии системы.</p>
+      </div>
+    </section>
+
+    <section class="section section--soft reveal">
+      <div class="container">
+        <h2>Ты не без ресурса. Ты в перекосе.</h2>
+        <p class="section__intro">
+          Если у тебя не получается закрыть какую-то сферу жизни — это не значит,
+          что у тебя нет ресурса. Это значит, что он уже работает. Просто не там.
+        </p>
+        <div class="grid-5">
+          <article class="card">Личность</article>
+          <article class="card">Решения</article>
+          <article class="card">Деньги</article>
+          <article class="card">Дело</article>
+          <article class="card">Масштаб</article>
+        </div>
+        <div class="imbalance">
+          <h3>Пример перекоса</h3>
+          <ul>
+            <li>Дело — 80%</li>
+            <li>Личность — 20%</li>
+            <li>Масштаб — 0%</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="system" class="section reveal">
+      <div class="container">
+        <h2>Я собираю систему</h2>
+        <div class="flow" aria-label="Система развития">
+          <span>Личность</span>
+          <span>Решения</span>
+          <span>Деньги</span>
+          <span>Дело</span>
+          <span>Масштаб</span>
+        </div>
+        <p class="accent-line">Если сбой в одном месте — проседает все.</p>
+      </div>
+    </section>
+
+    <section id="diagnostics" class="section section--soft reveal">
+      <div class="container">
+        <h2>Мини-диагностика</h2>
+        <p class="section__intro">Ответь на несколько вопросов и узнай, где у тебя сбой.</p>
+
+        <form id="quizForm" class="quiz">
+          <fieldset>
+            <legend>1. Где чаще всего застреваешь перед следующим шагом?</legend>
+            <label><input type="radio" name="q1" value="Решения" required> Не могу выбрать решение</label>
+            <label><input type="radio" name="q1" value="Личность"> Не держу внутреннюю опору</label>
+            <label><input type="radio" name="q1" value="Деньги"> Сомневаюсь в финансовых шагах</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>2. Что первым проседает при нагрузке?</legend>
+            <label><input type="radio" name="q2" value="Масштаб" required> Масштаб и рост</label>
+            <label><input type="radio" name="q2" value="Дело"> Дело и процессы</label>
+            <label><input type="radio" name="q2" value="Личность"> Личное состояние</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>3. Что сейчас сложнее всего удерживать стабильно?</legend>
+            <label><input type="radio" name="q3" value="Деньги" required> Деньги</label>
+            <label><input type="radio" name="q3" value="Решения"> Скорость решений</label>
+            <label><input type="radio" name="q3" value="Дело"> Систему действий</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>4. Где у тебя больше всего незавершенности?</legend>
+            <label><input type="radio" name="q4" value="Дело" required> В проектах и задачах</label>
+            <label><input type="radio" name="q4" value="Масштаб"> В росте и делегировании</label>
+            <label><input type="radio" name="q4" value="Решения"> В выборе стратегических шагов</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>5. Что даст самый быстрый сдвиг прямо сейчас?</legend>
+            <label><input type="radio" name="q5" value="Личность" required> Собранное внутреннее состояние</label>
+            <label><input type="radio" name="q5" value="Деньги"> Четкая финансовая логика</label>
+            <label><input type="radio" name="q5" value="Масштаб"> Переход на новый уровень</label>
+          </fieldset>
+
+          <button class="btn btn--accent" type="submit">Показать результат</button>
+        </form>
+
+        <div id="quizResult" class="quiz-result" aria-live="polite"></div>
+
+        <div class="hero__actions quiz-actions">
+          <a class="btn btn--outline" href="#entry-levels">Получить карту</a>
+          <a class="btn btn--outline" href="#entry-levels">Мини-разбор</a>
+          <a class="btn btn--accent" href="#entry-levels">Диагностика</a>
+        </div>
+
+        <form id="leadForm" class="lead-form">
+          <h3>Быстрая запись</h3>
+          <p class="section__intro">Оставь данные, и откроется мессенджер с готовой заявкой.</p>
+          <div class="lead-grid">
+            <label>
+              Имя
+              <input type="text" name="name" required placeholder="Ваше имя">
+            </label>
+            <label>
+              Контакт
+              <input type="text" name="contact" required placeholder="Телефон или @username">
+            </label>
+            <label>
+              Формат
+              <select name="format" required>
+                <option value="">Выберите формат</option>
+                <option>Тест и карта системы</option>
+                <option>Мини-разбор</option>
+                <option>Диагностика системы</option>
+                <option>Сопровождение 3-6 месяцев</option>
+                <option>Стратегическое сопровождение</option>
+                <option>Обучение</option>
+                <option>Живые мероприятия</option>
+              </select>
+            </label>
+            <label class="lead-grid__wide">
+              Комментарий
+              <textarea name="comment" rows="3" placeholder="Коротко о вашей точке запроса"></textarea>
+            </label>
+          </div>
+
+          <div class="hero__actions">
+            <button type="submit" class="btn btn--accent">Отправить в Telegram</button>
+            <button type="button" id="sendWhatsapp" class="btn btn--outline">Отправить в WhatsApp</button>
+          </div>
+          <p id="leadStatus" class="lead-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section id="entry-levels" class="section reveal">
+      <div class="container">
+        <h2>Выбери свой уровень входа</h2>
+        <div class="cards-grid">
+          <article class="card"><h3>Бесплатно</h3><p>Тест и карта системы</p></article>
+          <article class="card"><h3>Первый шаг</h3><p>Мини-разбор «Точка сбоя»</p></article>
+          <article class="card"><h3>Глубоко</h3><p>Диагностика системы</p></article>
+          <article class="card"><h3>Система</h3><p>Сопровождение (минимум 3–6 месяцев)</p></article>
+          <article class="card"><h3>Рост</h3><p>Стратегическое сопровождение</p></article>
+          <article class="card"><h3>Профессия</h3><p>Обучение с дипломом</p></article>
+          <article class="card"><h3>Среда</h3><p>Живые мероприятия</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft reveal">
+      <div class="container narrow">
+        <h2>Сопровождение — это не курс</h2>
+        <p>Минимальный цикл — 3–6 месяцев. Это период, за который собирается базовая система.</p>
+        <p>Дальше возможен рост: масштаб, бизнес, автоматизация, новая роль.</p>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="container narrow">
+        <h2>Система внутри — основа системы снаружи</h2>
+        <ul class="plain-list">
+          <li>структурирование процессов</li>
+          <li>автоматизация</li>
+          <li>масштабирование</li>
+          <li>связка личности и бизнеса</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--soft reveal">
+      <div class="container narrow">
+        <h2>Обучение системной интеграции личности</h2>
+        <ul class="plain-list">
+          <li>Передача метода</li>
+          <li>Практика</li>
+          <li>Диплом государственного образца</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="container narrow">
+        <h2>Войти в среду</h2>
+        <ul class="plain-list">
+          <li>нетворкинги</li>
+          <li>встречи</li>
+          <li>ретриты</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="about" class="section section--soft reveal">
+      <div class="container narrow">
+        <h2>Юлия Хасинаева</h2>
+        <p>системный интегратор личности, ментор, стратег</p>
+        <div class="facts">
+          <span>20+ лет опыта</span>
+          <span>Заслуженный юрист КЧР</span>
+          <span>Автор метода novaЯ</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section final reveal">
+      <div class="container narrow">
+        <h2>Ты можешь продолжать искать ответы по частям. А можешь увидеть систему.</h2>
+        <div class="hero__actions">
+          <a class="btn btn--accent" href="#diagnostics">Пройти диагностику</a>
+          <a class="btn btn--outline" href="#diagnostics">Записаться</a>
+          <a class="btn btn--outline" href="#entry-levels">Обучение</a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <script>
-    const STORAGE_KEY = "budget-theme";
-    const root = document.documentElement;
-    const themeToggleButton = document.getElementById("themeToggle");
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="https://t.me/Khasinaeva_Yuliya" target="_blank" rel="noopener noreferrer">
+        Telegram
+      </a>
+      <a href="https://instagram.com/xasinaeva" target="_blank" rel="noopener noreferrer">
+        Instagram: @xasinaeva
+      </a>
+    </div>
+  </footer>
 
-    function applyTheme(theme) {
-      if (theme === "dark") {
-        root.setAttribute("data-theme", "dark");
-        themeToggleButton.textContent = "Светлая тема";
-      } else {
-        root.removeAttribute("data-theme");
-        themeToggleButton.textContent = "Темная тема";
+  <script>
+    // Плавное появление секций при прокрутке.
+    const revealElements = document.querySelectorAll(".reveal");
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    revealElements.forEach((element) => revealObserver.observe(element));
+
+    // Простая логика мини-диагностики: считаем самую частую выбранную зону.
+    const quizForm = document.getElementById("quizForm");
+    const quizResult = document.getElementById("quizResult");
+
+    quizForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const formData = new FormData(quizForm);
+      const counters = {};
+
+      for (const value of formData.values()) {
+        counters[value] = (counters[value] || 0) + 1;
       }
+
+      const dominantZone = Object.entries(counters).sort((a, b) => b[1] - a[1])[0][0];
+      quizResult.innerHTML = `
+        <p class="result-title">Твой сбой — ${dominantZone.toLowerCase()}</p>
+        <p class="result-text">Это не приговор. Это точка входа в сборку системы.</p>
+      `;
+      quizResult.classList.add("is-shown");
+    });
+
+    // Быстрый MVP-сбор заявки: открываем мессенджер с готовым текстом.
+    const TELEGRAM_USERNAME = "Khasinaeva_Yuliya";
+    const WHATSAPP_NUMBER = "79275167777"; // Пример: 79991234567 (без плюса)
+
+    const leadForm = document.getElementById("leadForm");
+    const leadStatus = document.getElementById("leadStatus");
+    const whatsappButton = document.getElementById("sendWhatsapp");
+
+    function buildLeadMessage() {
+      const data = new FormData(leadForm);
+      const name = data.get("name").toString().trim();
+      const contact = data.get("contact").toString().trim();
+      const format = data.get("format").toString().trim();
+      const comment = data.get("comment").toString().trim();
+
+      return [
+        "Новая заявка с лендинга",
+        `Имя: ${name}`,
+        `Контакт: ${contact}`,
+        `Формат: ${format}`,
+        `Комментарий: ${comment || "—"}`
+      ].join("\n");
     }
 
-    const savedTheme = localStorage.getItem(STORAGE_KEY);
-    const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const initialTheme = savedTheme || (systemPrefersDark ? "dark" : "light");
+    leadForm.addEventListener("submit", (event) => {
+      event.preventDefault();
 
-    applyTheme(initialTheme);
+      if (!leadForm.reportValidity()) {
+        return;
+      }
 
-    themeToggleButton.addEventListener("click", () => {
-      const currentTheme = root.getAttribute("data-theme") === "dark" ? "dark" : "light";
-      const nextTheme = currentTheme === "dark" ? "light" : "dark";
-      localStorage.setItem(STORAGE_KEY, nextTheme);
-      applyTheme(nextTheme);
+      const message = buildLeadMessage();
+      const url = `https://t.me/${TELEGRAM_USERNAME}?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank", "noopener,noreferrer");
+      leadStatus.textContent = "Открыли Telegram. Проверь и отправь сообщение в 1 клик.";
+    });
+
+    whatsappButton.addEventListener("click", () => {
+      if (!leadForm.reportValidity()) {
+        return;
+      }
+
+      if (!WHATSAPP_NUMBER) {
+        leadStatus.textContent = "Для WhatsApp добавь номер в коде: константа WHATSAPP_NUMBER.";
+        return;
+      }
+
+      const message = buildLeadMessage();
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank", "noopener,noreferrer");
+      leadStatus.textContent = "Открыли WhatsApp. Проверь и отправь сообщение.";
     });
   </script>
 </body>
